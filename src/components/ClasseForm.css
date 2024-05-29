@@ -1,0 +1,44 @@
+.classe-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .classe-form h2 {
+    margin-bottom: 20px;
+  }
+  
+  .classe-form label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .classe-form input[type="text"],
+  .classe-form select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  .classe-form select {
+    height: 150px; /* Hauteur suffisante pour afficher plusieurs options */
+  }
+  
+  .classe-form button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .classe-form button[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  

@@ -1,0 +1,83 @@
+.classe-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Arial, sans-serif;
+
+}
+
+.classe-form-title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: black;
+}
+
+.classe-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ 
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 500px;
+  margin: 0 auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.classe-form-group {
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.classe-form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.classe-form-input,
+.classe-form-select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.classe-form-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #fff;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%23999" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position-x: 95%;
+  background-position-y: center;
+  cursor: pointer;
+}
+
+.classe-form-select[multiple] {
+  height: auto;
+  background-image: none;
+}
+
+.classe-form-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.classe-form-button:hover {
+  background-color: #45a049;
+}
+
+.classe-form-input:focus,
+.classe-form-select:focus {
+  border-color: #4CAF50;
+  outline: none;
+}

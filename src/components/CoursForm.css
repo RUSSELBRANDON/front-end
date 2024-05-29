@@ -1,0 +1,54 @@
+.cour-form-container {
+    display: flex;
+  }
+  
+  .cour-form {
+    flex: 1;
+    margin-right: 20px;
+  }
+  
+  .cour-form h2 {
+    margin-bottom: 20px;
+  }
+  
+  .cour-form .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .cour-form label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .cour-form input,
+  .cour-form select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .cour-form button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .cour-form button:hover {
+    background-color: #0056b3;
+  }
+  
+  .courses-list {
+    flex: 1;
+    color: black;
+  }
+  
+  .courses-list h2 {
+    margin-bottom: 10px;
+  }
+  
+  /* Ajoutez ici le style pour la liste des cours si nécessaire */
+  

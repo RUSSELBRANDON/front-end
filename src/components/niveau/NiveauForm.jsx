@@ -7,6 +7,7 @@ function NiveauForm() {
   const [selectedFiliere, setSelectedFiliere] = useState('');
   const [matieres, setMatieres] = useState([]);
   const [selectedMatiere, setSelectedMatiere] = useState('');
+  const [niveaux, setNiveaux] = useState([]);
 
   const handleNiveauChange = (e) => {
     setNiveau(e.target.value);
@@ -36,14 +37,17 @@ function NiveauForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Logique d'enregistrement ici
-    console.log("Niveau enregistré :", { niveau, filieres, matieres });
+    const newNiveau = { niveau, filieres, matieres };
+    setNiveaux([...niveaux, newNiveau]);
+    setNiveau('');
+    setFilieres([]);
+    setMatieres([]);
   };
 
   return (
-    <div className="niveau-form">
-      <h2>Ajouter un Niveau</h2>
-      <form onSubmit={handleSubmit}>
+    <div className="niveau-form-container">
+      <form className="niveau-form" onSubmit={handleSubmit}>
+        <h2>Ajouter un Niveau</h2>
         <div className="input-group">
           <label htmlFor="niveau">Niveau :</label>
           <input
@@ -51,6 +55,7 @@ function NiveauForm() {
             id="niveau"
             value={niveau}
             onChange={handleNiveauChange}
+            required
           />
         </div>
         <div className="input-group">
@@ -59,12 +64,13 @@ function NiveauForm() {
             id="filiere"
             value={selectedFiliere}
             onChange={handleFiliereChange}
+            required
           >
             <option value=""></option>
             <option value="Informatique">Informatique</option>
             <option value="Mathématiques">Mathématiques</option>
             <option value="Physique">Physique</option>
-            <option value="chimie">Chimie</option>
+            <option value="Chimie">Chimie</option>
             {/* Ajoutez d'autres options selon vos besoins */}
           </select>
           <button type="button" onClick={handleFiliereAdd}>Ajouter Filière</button>
@@ -80,6 +86,7 @@ function NiveauForm() {
             id="matiere"
             value={selectedMatiere}
             onChange={handleMatiereChange}
+            required
           >
             <option value=""></option>
             <option value="Matiere1">Matière 1</option>
@@ -93,10 +100,31 @@ function NiveauForm() {
             {matieres.map((matiere, index) => (
               <li key={index}>{matiere}</li>
             ))}
-          </ul> 
+          </ul>
         </div>
-        <button type="submit" className="niveau-form-button">Enregistrer</button>
+        <button type="submit">Enregistrer</button>
       </form>
+      <div className="niveau-table">
+        <h2>Niveaux Enregistrés</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Niveau</th>
+              <th>Filières</th>
+              <th>Matières</th>
+            </tr>
+          </thead>
+          <tbody>
+            {niveaux.map((niveau, index) => (
+              <tr key={index}>
+                <td>{niveau.niveau}</td>
+                <td>{niveau.filieres.join(', ')}</td>
+                <td>{niveau.matieres.join(', ')}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }

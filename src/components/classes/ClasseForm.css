@@ -1,41 +1,39 @@
-.classe-form-container {
+.classe-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-family: Arial, sans-serif;
-
+  justify-content: space-between;
+  margin: 20px;
 }
 
-.classe-form-title {
-  text-align: center;
-  margin-bottom: 20px;
-  color: black;
+.classe-form, .classe-table {
+  width: 35%;
 }
 
 .classe-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  color: black;
+}
+
+.classe-table {
  
   padding: 20px;
   border-radius: 5px;
-  max-width: 500px;
-  margin: 0 auto;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+ 
 }
 
-.classe-form-group {
+.input-group {
   margin-bottom: 1rem;
-  width: 100%;
 }
 
-.classe-form-label {
+.input-group label {
   display: block;
   margin-bottom: 0.5rem;
 }
 
-.classe-form-input,
-.classe-form-select {
+.input-group input,
+.input-group select {
   width: 100%;
   padding: 8px;
   margin-top: 5px;
@@ -44,7 +42,7 @@
   font-size: 16px;
 }
 
-.classe-form-select {
+.input-group select {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -56,12 +54,12 @@
   cursor: pointer;
 }
 
-.classe-form-select[multiple] {
+.input-group select[multiple] {
   height: auto;
   background-image: none;
 }
 
-.classe-form-button {
+button {
   background-color: #4CAF50;
   color: white;
   padding: 10px 20px;
@@ -72,12 +70,25 @@
   margin-top: 20px;
 }
 
-.classe-form-button:hover {
+button:hover {
   background-color: #45a049;
 }
 
-.classe-form-input:focus,
-.classe-form-select:focus {
-  border-color: #4CAF50;
-  outline: none;
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
 }

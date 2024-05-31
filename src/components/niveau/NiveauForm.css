@@ -1,4 +1,11 @@
+.niveau-form-container {
+  display: flex;
+}
+
 .niveau-form {
+  width: 50%;
+  padding: 20px;
+  box-sizing: border-box;
   width: 500px; /* Adjust width as needed */
   margin: 50px auto; /* Center the form horizontally */
   padding: 20px;
@@ -6,45 +13,71 @@
   border-radius: 4px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   font-family: sans-serif;
-  }
-  
-  .input-group {
-    margin-bottom: 20px;
-  }
-  
-  .input-group label {
-    display: block;
-    margin-bottom: 5px;
-    color: black;
-  }
-  
-  .input-group input,
-  .input-group select {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-    font-size: 16px;
-    margin-top: 5px;
-  }
-  
-  .input-group select {
-    cursor: pointer;
-    background-color: white;
-  }
-  
-  .selected-filieres {
-    margin-top: 20px;
-  }
-  
-  .selected-filieres ul {
-    list-style-type: none;
-    padding: 0;
-    
-  }
-  
-  .selected-filieres ul li {
-    margin-bottom: 5px;
-  }
-  
+  color: black;
+}
+
+.niveau-table {
+  width: 50%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.input-group {
+  margin-bottom: 1rem;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.input-group input,
+.input-group select {
+  width: calc(100% - 22px);
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.input-group button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
+
+.niveau-form button[type="submit"] {
+  margin-top: 10px;
+  width: 50%;
+}
+
+.niveau-form button:hover {
+  background-color: #45a049;
+}
+
+.niveau-table h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.niveau-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.niveau-table th,
+.niveau-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.niveau-table th {
+  background-color: #f2f2f2;
+}

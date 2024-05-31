@@ -7,6 +7,7 @@ function NiveauForm() {
   const [selectedFiliere, setSelectedFiliere] = useState('');
   const [matieres, setMatieres] = useState([]);
   const [selectedMatiere, setSelectedMatiere] = useState('');
+  const [niveaux, setNiveaux] = useState([]);
 
   const handleNiveauChange = (e) => {
     setNiveau(e.target.value);
@@ -34,61 +35,96 @@ function NiveauForm() {
     }
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const newNiveau = { niveau, filieres, matieres };
+    setNiveaux([...niveaux, newNiveau]);
+    setNiveau('');
+    setFilieres([]);
+    setMatieres([]);
+  };
+
   return (
-    <div className="niveau-form">
-      <h2>Ajouter un Niveau</h2>
-      <div className="input-group">
-        <label htmlFor="niveau">Niveau :</label>
-        <input
-          type="text"
-          id="niveau"
-          value={niveau}
-          onChange={handleNiveauChange}
-        />
+    <div className="niveau-form-container">
+      <form className="niveau-form" onSubmit={handleSubmit}>
+        <h2>Ajouter un Niveau</h2>
+        <div className="input-group">
+          <label htmlFor="niveau">Niveau :</label>
+          <input
+            type="text"
+            id="niveau"
+            value={niveau}
+            onChange={handleNiveauChange}
+            required
+          />
+        </div>
+        <div className="input-group">
+          <label htmlFor="filiere">Filières :</label>
+          <select
+            id="filiere"
+            value={selectedFiliere}
+            onChange={handleFiliereChange}
+            required
+          >
+            <option value=""></option>
+            <option value="Informatique">Informatique</option>
+            <option value="Mathématiques">Mathématiques</option>
+            <option value="Physique">Physique</option>
+            <option value="Chimie">Chimie</option>
+            {/* Ajoutez d'autres options selon vos besoins */}
+          </select>
+          <button type="button" onClick={handleFiliereAdd}>Ajouter Filière</button>
+          <ul>
+            {filieres.map((filiere, index) => (
+              <li key={index}>{filiere}</li>
+            ))}
+          </ul>
+        </div>
+        <div className="input-group">
+          <label htmlFor="matiere">Matières :</label>
+          <select
+            id="matiere"
+            value={selectedMatiere}
+            onChange={handleMatiereChange}
+            required
+          >
+            <option value=""></option>
+            <option value="Matiere1">Matière 1</option>
+            <option value="Matiere2">Matière 2</option>
+            <option value="Matiere3">Matière 3</option>
+            <option value="Matiere4">Matière 4</option>
+            {/* Ajoutez d'autres options selon vos besoins */}
+          </select>
+          <button type="button" onClick={handleMatiereAdd}>Ajouter Matière</button>
+          <ul>
+            {matieres.map((matiere, index) => (
+              <li key={index}>{matiere}</li>
+            ))}
+          </ul>
+        </div>
+        <button type="submit">Enregistrer</button>
+      </form>
+      <div className="niveau-table">
+        <h2>Niveaux Enregistrés</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Niveau</th>
+              <th>Filières</th>
+              <th>Matières</th>
+            </tr>
+          </thead>
+          <tbody>
+            {niveaux.map((niveau, index) => (
+              <tr key={index}>
+                <td>{niveau.niveau}</td>
+                <td>{niveau.filieres.join(', ')}</td>
+                <td>{niveau.matieres.join(', ')}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
-      <div className="input-group">
-        <label htmlFor="filiere">Filières :</label>
-        <select
-          id="filiere"
-          value={selectedFiliere}
-          onChange={handleFiliereChange}
-        >
-          <option value=""></option>
-          <option value="Informatique">Informatique</option>
-          <option value="Mathématiques">Mathématiques</option>
-          <option value="Physique">Physique</option>
-          <option value="chimie">chimie</option>
-          {/* Ajoutez d'autres options selon vos besoins */}
-        </select>
-        <button type="button" onClick={handleFiliereAdd}>Ajouter Filière</button>
-        <ul>
-          {filieres.map((filiere, index) => (
-            <li key={index}>{filiere}</li>
-          ))}
-        </ul>
-      </div>
-      <div className="input-group">
-        <label htmlFor="matiere">Matieres :</label>
-        <select
-          id="matiere"
-          value={selectedMatiere}
-          onChange={handleMatiereChange}
-        >
-          <option value=""></option>
-          <option value="Matiere1">Matiere 1</option>
-          <option value="Matiere2">Matiere 2</option>
-          <option value="Matiere3">Matiere 3</option>
-          <option value="Matiere4">Matiere 4</option>
-          {/* Ajoutez d'autres options selon vos besoins */}
-        </select>
-        <button type="button" onClick={handleMatiereAdd}>Ajouter Matiere</button>
-        <ul>
-          {matieres.map((matiere, index) => (
-            <li key={index}>{matiere}</li>
-          ))}
-        </ul> 
-      </div>
-      
     </div>
   );
 }
